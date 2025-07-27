@@ -169,6 +169,11 @@ class PioneerDevice(MediaPlayerEntity):
         return True
 
     @property
+    def unique_id(self):
+        return f"pioneer_{self._host.replace('.', '_')}"
+
+
+    @property
     def name(self):
         """Return the name of the device."""
         return self._name
