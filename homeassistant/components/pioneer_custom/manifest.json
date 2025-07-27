@@ -1,5 +1,5 @@
 {
-  "domain": "pioneer",
+  "domain": "pioneer_custom",
   "name": "Pioneer",
   "codeowners": [],
   "documentation": "https://www.home-assistant.io/integrations/pioneer",
