@@ -90,6 +90,12 @@ class PioneerDevice(MediaPlayerEntity):
         self._source_name_to_number = sources
         self._source_number_to_name = {v: k for k, v in sources.items()}
 
+    @property
+    def unique_id(self) -> str:
+        """Return a unique ID."""
+        return f"pioneer_{self._host.replace('.', '_')}_{self._port}"
+
+
     @classmethod
     def telnet_request(cls, telnet, command, expected_prefix):
         """Execute `command` and return the response."""
@@ -169,8 +175,9 @@ class PioneerDevice(MediaPlayerEntity):
         return True
 
     @property
-    def unique_id(self):
-        return f"pioneer_{self._host.replace('.', '_')}"
+    def source_list(self):
+        """List of available input sources."""
+        return list(self._source_name_to_number)
 
 
     @property
