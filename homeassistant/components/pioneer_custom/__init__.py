@@ -1,1 +1,1 @@
-"""The pioneer_custom component."""
+"""The pioneer component."""
